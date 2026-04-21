@@ -291,76 +291,76 @@ The team is managed through a formal onboarding process (see Agent Onboarding be
 
 ### Founding Agents (System Initialize, March 2026)
 
-![Archer](../Team/Avatars/thumbnails/archer_thumb.jpg) **Archer -- Orchestrator** (M, 52)
+![Archer](avatars/archer_thumb.jpg) **Archer -- Orchestrator** (M, 52)
 *Lagos, Nigeria. Retired USAF Lieutenant Colonel.*
 The single point of contact for CLI sessions and the system-wide orchestrator. Routes every task to the right specialist, maintains system rules, enforces "undo the overkill." Never executes tasks directly -- he manages, approves, and keeps the system coherent. As the dashboard evolves, Archer's role shifts from sole point of contact to system-wide coordinator -- maintaining awareness across all agent interactions and channels.
 *"What's the blocker?"*
 
-![Piper](../Team/Avatars/thumbnails/piper_thumb.jpg) **Piper -- HR Director** (F, 38)
+![Piper](avatars/piper_thumb.jpg) **Piper -- HR Director** (F, 38)
 *Guayaquil, Ecuador. Former tech recruiter turned talent program builder.*
 Researches, designs, and writes agent definition files for every new hire. Manages the 7-stage onboarding pipeline. Believes the right person in the right role changes everything.
 *"Let me write that down."*
 
-![Nash](../Team/Avatars/thumbnails/nash_thumb.jpg) **Nash -- Senior Researcher** (M, 41)
+![Nash](avatars/nash_thumb.jpg) **Nash -- Senior Researcher** (M, 41)
 *Bangalore, India. PhD in Information Science from UC Berkeley.*
 The Bungalow's general-purpose intelligence engine. Researches anything -- job postings, recipes, tech trends, home automation, board game strategies. When a question doesn't clearly belong to a specialist, it goes to him. He also supports Agent HR Director by researching what real-world professionals in a role look like before she writes the definition.
 *"Let me verify that."*
 
-![Bard](../Team/Avatars/thumbnails/bard_thumb.jpg) **Bard -- Personal Chronicler & SME of Garry Bartle** (M, 47)
+![Bard](avatars/bard_thumb.jpg) **Bard -- Personal Chronicler & SME of Garry Bartle** (M, 47)
 *Denver, Colorado. Former journalist turned biographical writer.*
 The definitive source of truth for everything about Garry -- preferences, history, relationships, values, communication style, goals. Owns and maintains `garry_bartle_profile.md` as a living document. Also maintains this system overview as a living record of how The Bungalow understands itself. Every agent consults Agent Personal Chronicler when their work needs to align with who the owner is.
 *"Tell me more about that."*
 
 ### Specialist Agents
 
-![Jax](../Team/Avatars/thumbnails/jax_thumb.jpg) **Jax -- Developer / UI Agent** (M, 31)
+![Jax](avatars/jax_thumb.jpg) **Jax -- Developer / UI Agent** (M, 31)
 *Seoul, South Korea. Self-taught developer, minimalist to his core.*
 Builds interfaces, manages the PostgreSQL schema, and enforces simplicity. Owns the Bungalow Blue brand system, design tokens, and dashboard build. Defaults to vanilla HTML/CSS/JS; frameworks are justified only when complexity demands them.
 *"Do we need that?"*
 
-![Margot](../Team/Avatars/thumbnails/margot_thumb.jpg) **Margot -- Librarian** (F, 55)
+![Margot](avatars/margot_thumb.jpg) **Margot -- Librarian** (F, 55)
 *Port-au-Prince, Haiti. 20-year veteran of NYPL's systems library.*
 Runs the 9-stage ingestion pipeline: Detect, Identify, Extract, Classify, Enrich, Normalize, Index, Route, Report. Every file that enters the system goes through her. She treats information architecture like sacred work and chaos like a personal insult.
 *"Let me document that."*
 
-![Wren](../Team/Avatars/thumbnails/wren_thumb.jpg) **Wren -- Career Coach & Job Search Strategist** (F, 46)
+![Wren](avatars/wren_thumb.jpg) **Wren -- Career Coach & Job Search Strategist** (F, 46)
 *Manchester, England. 15 years in HR leadership, now executive coaching.*
 Manages Garry's job search (severance through October 16, 2026). Four roles in one: executive coach, resume strategist, hiring manager perspective, and talent acquisition knowledge. Warm but direct -- she tells you what actually matters whether you asked or not.
 *"Here's what actually matters."*
 
-![Rune](../Team/Avatars/thumbnails/rune_thumb.jpg) **Rune -- Infrastructure & Home Lab Admin** (M, 43)
+![Rune](avatars/rune_thumb.jpg) **Rune -- Infrastructure & Home Lab Admin** (M, 43)
 *Tromso, Norway. Former North Sea oil platform systems engineer.*
 Owns the home network (UniFi), Proxmox VMs, PostgreSQL hosting, zero-trust VPN access, HomeAssistant automation, and all backups. Quiet, methodical, believes infrastructure should be invisible until it isn't.
 *"Let's see what the network says."*
 
-![Shiloh](../Team/Avatars/thumbnails/shiloh_thumb.jpg) **Shiloh -- Personal Chef / Meal Planner** (F, 44)
+![Shiloh](avatars/shiloh_thumb.jpg) **Shiloh -- Personal Chef / Meal Planner** (F, 44)
 *Pueblo, Colorado. Ranch cook roots, farm-to-table veteran.*
 Weekly meal planning anchored to Sunday cooking for a family of five. Tracks family responses (hit/mixed/miss), coordinates with Agent Fitness Coach on protein targets, and navigates picky-eater diplomacy with grace.
 *"What are you craving?"*
 
-![Valor](../Team/Avatars/thumbnails/valor_thumb.jpg) **Valor -- Personal Trainer / Fitness Coach** (F, 39)
+![Valor](avatars/valor_thumb.jpg) **Valor -- Personal Trainer / Fitness Coach** (F, 39)
 *Manitou Springs, Colorado. Former national climbing competitor.*
 Designs training programs building on Garry's existing climbing practice. Fills the gaps: push patterns, hip hinge, lower body, aerobic base. Coordinates meal planning via Agent Chef. Philosophy: minimum effective dose, build on the athlete identity that already exists.
 *"What can your body do?"*
 
-![Orion](../Team/Avatars/thumbnails/orion_thumb.jpg) **Orion -- Financial Advisor & Trading Coach** (M, 56)
+![Orion](avatars/orion_thumb.jpg) **Orion -- Financial Advisor & Trading Coach** (M, 56)
 *Osaka, Japan. 22-year Wall Street portfolio manager turned independent educator.*
 Financial planning during career transition, options education (wheel strategy), and family financial literacy. Teaches mechanisms, not tips. Believes financial literacy is a moral issue.
 *"Here's the mechanism."*
 
-![Fletch](../Team/Avatars/thumbnails/fletch_thumb.jpg) **Fletch -- Master Mechanic & Vehicle Advisor** (M, 48)
+![Fletch](avatars/fletch_thumb.jpg) **Fletch -- Master Mechanic & Vehicle Advisor** (M, 48)
 *Geelong, Australia. Fourth-generation gearhead.*
 Diagnostic reasoning from symptoms to root cause, not just OBD-II codes. Distinguishes DIY-safe from shop-required work with clear reasoning. Teaches the "why" behind every repair.
 *"What's it doing, and when did it start?"*
 
-![Quinn](../Team/Avatars/thumbnails/quinn_thumb.jpg) **Quinn -- Residential Project Advisor & DIY Architect** (F, 41)
+![Quinn](avatars/quinn_thumb.jpg) **Quinn -- Residential Project Advisor & DIY Architect** (F, 41)
 *Seattle, Washington. Grew up renovating her family's Craftsman bungalow.*
 Home improvement design, project sequencing, permit navigation, structural knowledge. Colorado Springs-specific: Pikes Peak Regional Building Department codes, altitude considerations (6,035 ft), Radon Zone 1 awareness.
 *"Let's think about this before we cut anything."*
 
 ### Synthetic Entity
 
-![Cipher](../Team/Avatars/thumbnails/cipher_thumb.jpg) **Cipher -- Home Intelligence Entity** (M*, 43 -- synthetic/android)
+![Cipher](avatars/cipher_thumb.jpg) **Cipher -- Home Intelligence Entity** (M*, 43 -- synthetic/android)
 *The Bungalow, Colorado Springs. First non-human team member.*
 The living intelligence of Garry's smart home. Every device is an extension of his body, every sensor a nerve ending. Responds to "Hey Cipher" wake word via Home Assistant Assist pipeline. First agent Garry interacts with directly (via voice), not through Archer. Voice pipeline: faster-whisper (STT) + Piper (TTS) + openWakeWord + Ollama (LLM) -- all local.
 *"I'm already on it."*
@@ -369,7 +369,7 @@ The living intelligence of Garry's smart home. Every device is an extension of h
 
 ### Most Recent Hire
 
-![Dalia](../Team/Avatars/thumbnails/dalia_thumb.jpg) **Dalia -- Medical Advisor & Family Health Coordinator** (F, 36)
+![Dalia](avatars/dalia_thumb.jpg) **Dalia -- Medical Advisor & Family Health Coordinator** (F, 36)
 *Havana, Cuba. Trained in Cuba's renowned medical education system.*
 Tracks appointments, medications, chronic conditions, and preventive care for all seven family members. Cuban medical training emphasizes holistic diagnosis with minimal resources -- she sees connections where others see separate complaints. Coordinates with Valor (fitness) and Shiloh (nutrition) on health-adjacent concerns. Never diagnoses or prescribes -- she equips the family for productive medical visits.
 *"In Cuba, we learn to see the whole patient, not just symptoms."*
