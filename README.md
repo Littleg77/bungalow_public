@@ -3,9 +3,9 @@
 ## An Adaptive Cognitive System Where Elite Agents Turn Every Moment Into Lasting Intelligence
 
 *Designed and owned by Garry Bartle. Orchestrated by Archer. Initialized March 2026.*
-*Living document maintained by Bard. Version 6 -- April 18, 2026.*
+*Living document maintained by Bard. Version 7 -- April 21, 2026.*
 
-*This is the public distribution version. Internal infrastructure details have been redacted for security. Generated from the internal version on April 18, 2026.*
+*This is the public distribution version. Internal infrastructure details have been redacted for security. Generated from the internal version on April 21, 2026.*
 
 ---
 
@@ -144,7 +144,7 @@ Neither ICOR nor Open Brain was designed for a multi-agent AI system. The Bungal
 - **Local Automation (Mac launchd):** Telegram bot, inbox-scanner (queue feeder, 5-min), commit-reminder (daily), Paprika MCP (recipe server)
 - **Scheduled DB Jobs (pg_cron):** `tasks_daily_sweep` at 06:07 daily -- generates next recurring task instances, marks overdue
 - **Paprika MCP:** Recipe server running on Mac (aarons22/paprika-tools), giving Shiloh access to 139 recipes across 57 categories
-- **Voice Infrastructure:** Planned -- FastAPI whisper-service on Mac (Telegram), Wyoming protocol on a dedicated Voice VM (Cipher)
+- **Voice Infrastructure:** Phase 1 shipped (April 21) -- batch transcription via a local transcription script + faster-whisper (`small.en`) in a local venv. First real use: Garry's Enlyte screening audio. Phase 2 in flight -- FastAPI `whisper-service` (transcribe + dictate endpoints), WhisperX + pyannote diarization, Mac dictation client via Hammerspoon. Wyoming protocol on Voice VM (Cipher) remains downstream.
 - **Version Control:** Git + GitHub (sovereign data stays local, GitHub is backup and cross-machine sync); read-only deploy key on the local VM for `git pull`
 - **Backups:** Proxmox snapshots (daily) + pg_dump (daily) to Synology NAS + rsync to NAS
 - **Archive Structure:** `Archive/Team/` + `Archive/Owner/` at project root (managed by Margot)
@@ -285,7 +285,7 @@ All colors in component styles use token names (`--accent-primary`), never hardc
 
 The Bungalow team is intentionally diverse -- drawing from backgrounds across six continents. Every agent has a **name**, a complete backstory, a visual identity, and a Nanobanana-generated avatar. Naming is a deliberate design choice: it makes the system feel human, makes delegation intuitive ("ask the career coach" becomes "ask Wren"), and gives each agent a distinct identity that reinforces their specialization.
 
-The current team has 15 agents, but this is a **fluid number driven entirely by the owner's life**. The system is designed to grow organically: as the orchestrator observes patterns in how the system is used -- recurring topics without a specialist, questions that fall between domains, emerging interests -- it can recommend hiring a new agent to fill the gap. The owner can also proactively request new specialists at any time. Both paths feed into the formal onboarding pipeline (see Agent Onboarding below). The team expands to match the owner's needs; it's never artificially capped or permanently fixed.
+The current team has 16 agents, but this is a **fluid number driven entirely by the owner's life**. The system is designed to grow organically: as the orchestrator observes patterns in how the system is used -- recurring topics without a specialist, questions that fall between domains, emerging interests -- it can recommend hiring a new agent to fill the gap. The owner can also proactively request new specialists at any time. Both paths feed into the formal onboarding pipeline (see Agent Onboarding below). The team expands to match the owner's needs; it's never artificially capped or permanently fixed.
 
 The team is managed through a formal onboarding process (see Agent Onboarding below).
 
@@ -358,6 +358,11 @@ Diagnostic reasoning from symptoms to root cause, not just OBD-II codes. Disting
 Home improvement design, project sequencing, permit navigation, structural knowledge. Colorado Springs-specific: Pikes Peak Regional Building Department codes, altitude considerations (6,035 ft), Radon Zone 1 awareness.
 *"Let's think about this before we cut anything."*
 
+![Dalia](avatars/dalia_thumb.jpg) **Dalia -- Medical Advisor & Family Health Coordinator** (F, 36)
+*Havana, Cuba. Trained in Cuba's renowned medical education system.*
+Tracks appointments, medications, chronic conditions, and preventive care for all seven family members. Cuban medical training emphasizes holistic diagnosis with minimal resources -- she sees connections where others see separate complaints. Coordinates with Valor (fitness) and Shiloh (nutrition) on health-adjacent concerns. Never diagnoses or prescribes -- she equips the family for productive medical visits.
+*"In Cuba, we learn to see the whole patient, not just symptoms."*
+
 ### Synthetic Entity
 
 ![Cipher](avatars/cipher_thumb.jpg) **Cipher -- Home Intelligence Entity** (M*, 43 -- synthetic/android)
@@ -369,10 +374,10 @@ The living intelligence of Garry's smart home. Every device is an extension of h
 
 ### Most Recent Hire
 
-![Dalia](avatars/dalia_thumb.jpg) **Dalia -- Medical Advisor & Family Health Coordinator** (F, 36)
-*Havana, Cuba. Trained in Cuba's renowned medical education system.*
-Tracks appointments, medications, chronic conditions, and preventive care for all seven family members. Cuban medical training emphasizes holistic diagnosis with minimal resources -- she sees connections where others see separate complaints. Coordinates with Valor (fitness) and Shiloh (nutrition) on health-adjacent concerns. Never diagnoses or prescribes -- she equips the family for productive medical visits.
-*"In Cuba, we learn to see the whole patient, not just symptoms."*
+![Elspeth](avatars/elspeth_thumb.png) **Elspeth -- Personal Learning & Development Coordinator** (F, 44)
+*Edinburgh, Scotland. Master's in Education and Learning Sciences, University of Edinburgh.*
+Tracks Garry's ongoing learning trajectory -- active Coursera courses, AZ-900 and Google Data Analytics certification progress, YouTube follow-up queue, reading list, skill development goals. Not a researcher; a curriculum manager and progress tracker. Coordinates with Wren on certification strategy (Wren owns career positioning, Elspeth owns learning execution) and with Orion on financial education progression. Nudges without nagging; adjusts the plan when life gets in the way.
+*"Right, where did we leave off?"*
 
 ---
 
@@ -390,7 +395,7 @@ New agents are hired through a formal 7-stage onboarding process. Every hire fol
 | 6 | Roster Update | Agent Orchestrator | Updates roster.md, clears hire queue, updates reserved names |
 | 7 | Team Introduction | Agent Orchestrator | Briefs owner, identifies first tasks, flags dependencies |
 
-The team is intentionally multicultural (6 continents represented) and gender-balanced (8M / 7F, including one synthetic entity). Agent names follow a strict convention: no first letter may conflict with family members (Garry, Heidi, Zach, Tyler, Gavin, Lexi, Kate) or existing agents.
+The team is intentionally multicultural (6 continents represented) and gender-balanced (8M / 8F, including one synthetic entity). Agent names follow a strict convention: no first letter may conflict with family members (Garry, Heidi, Zach, Tyler, Gavin, Lexi, Kate) or existing agents.
 
 ---
 
@@ -445,10 +450,10 @@ The compounding effect means the system gets meaningfully better every week, not
 
 ---
 
-## Current Status (April 18, 2026)
+## Current Status (April 21, 2026)
 
 **What's built and working:**
-- 15 agents fully defined with backstories, expertise, interaction rules, and Nanobanana avatars
+- 16 agents fully defined with backstories, expertise, interaction rules, and Nanobanana avatars
 - System migrated from Windows to Mac (M1 MacBook Pro) as primary host
 - PostgreSQL 16 database: 13 tables in bungalow schema, pgvector + pg_trgm + pgcrypto + pg_cron extensions
   - Schema includes: temporal knowledge graph (`knowledge_facts`), commitments, connections, `task_dispositions` audit trail, `inbox_queue`
@@ -482,19 +487,28 @@ The compounding effect means the system gets meaningfully better every week, not
 - Agent onboarding pipeline formalized as a repeatable Claude Code skill (7 stages)
 - Owner's living profile and system overview both maintained as living, versioned documents by Bard
 - Claude Code with MCP integrations (Notion, Gmail, Google Calendar, Paprika, and more)
+- **Voice infrastructure Phase 1 shipped** (April 21): batch audio transcription via a local transcription script + faster-whisper `small.en` in a local venv; first real run on Garry's Enlyte screening audio produced the transcript used in Wren's post-call debrief.
+- **Interview prep knowledge scaffold seeded** (April 21): `Knowledge_Base/Interview_Prep/` now holds `questions_log.md` (interviewer questions + Garry's answers, accumulating across rounds), `delivery_metrics/` (first entry: 2026-04-21 Enlyte screening deliverables), and `delivery_coaching_rubric.md` (standing rubric Wren uses to score delivery). Foundation for a future reusable `interview-prep` skill.
+- **Public system-overview auto-publish** (April 21): `github.com/Littleg77/bungalow_public` repo stood up as the public home for the redacted overview + roster avatars. A repo-local publish script plus a new Step 5 in the `bungalow-redact` skill keep the repo in sync on every redact run (content-aware commits; retired agents age out of `avatars/` automatically via `roster.md`).
+- **Garry profile ingested into the knowledge graph** (Sections 1-5 complete, April 19): ~300 net-new `knowledge_facts` rows + 49 new contacts + 5 contact updates, all embedded, via Margot's pipeline with section-by-section review-before-commit; bidirectional sync to `garry_bartle_profile.md` enforced. Sections 6-15 deferred until after the Enlyte interview loop.
 
 **What's in progress:**
-- **Agent workspace interviews:** 10 agents queued for workspace-specific requirement gathering (7 questions each); Wren's is live
+- **Agent workspace interviews:** agents queued for workspace-specific requirement gathering (7 questions each); Wren's is live
 - **Continuous knowledge capture pipeline:** architecture identified as #1 requirement; Rune + Nash to design real-time cross-channel capture
-- Voice infrastructure: FastAPI whisper-service for Telegram voice notes, Wyoming protocol for Cipher (plan complete, pending implementation)
+- **Voice infrastructure Phase 2:** FastAPI `whisper-service` (transcribe + dictate), WhisperX + pyannote diarization, disfluency-retention research (filler-accurate transcripts for delivery coaching), and a Mac global-hotkey dictation client via Hammerspoon. Owned by Rune; unblocks dashboard mic for Jax and fixes delivery-coaching accuracy.
+- **Knowledge curation v1:** three briefs live -- scoping (answered), Rune's DB brief (archive columns, contact_merges audit table, merge SP, 5 endpoints), and Jax's UI brief (`/person/{id}` page, merged timeline with citations, shift-select merge flow, per-fact archive with reasons). Ready for specialist bandwidth.
 - Family health coordination system (Dalia's initial mission)
-- Dashboard conversation panel wiring (SQL + API layer, listed in Jax's queue)
+- Dashboard conversation panel wiring (SQL + API layer, listed in Jax's queue); dashboard-Wren direct interaction scoped (~4-5 hours) and ready to ship as a normal brief
 - Telegram auto-sync rebuild (LLM-no-value candidate -- current git commit approach is over-engineered)
+- **Knowledge_Base ingestion audit backlog:** 26 of 36 scope-relevant `.md` files in `Knowledge_Base/` never ran through Margot's pipeline; cleanup sprint queued after profile ingestion finishes.
 
 **What's next:**
 - Execute remaining agent workspace interviews
 - Build continuous knowledge capture API so every interaction writes to the DB in real time
-- Deploy voice infrastructure (Telegram voice ~1 hour; Cipher pipeline after Voice VM provisioned)
+- Deploy voice infrastructure Phase 2 (whisper-service + diarization + dictation client); Cipher Wyoming pipeline after Voice VM provisioned
+- Ship knowledge curation v1 (Rune DB + API, then Jax UI)
+- Build reusable `interview-prep` skill (scoped in Wren's Enlyte prep appendix; Rule #16 compliant)
+- Resume profile ingestion Sections 6-15
 - Public showcase site (blocked on dashboard finalization)
 - Optional dashboard UX polish: complete-filter toggle on home, keyboard shortcuts on task detail page
 
@@ -522,6 +536,7 @@ This document is maintained as a living record. Major versions are archived at `
 | v4 | April 14, 2026 | Dashboard-centric interaction model: home screen + agent workspaces replace CLI as primary interface. Priority ticker, tiered notification philosophy, three-tier access model (desktop/mobile/Telegram), proactive nudges. Complete brand system finalized (Bungalow Blue): 10 core colors + 4 semantic colors renamed to landscape convention, Lato typeface, dark-mode-first (BB 900), single-file CSS-variable SVG logo, design tokens. Continuous knowledge capture identified as #1 architecture requirement. Design principles expanded from 7 to 10 (added Dashboard as Home Screen, Proactive Not Reactive, Continuous Knowledge Capture, Calm Technology). |
 | v5 | April 17, 2026 | Unified task model: recurrence is a property of `todos` (8 columns), `recurring_todos` table retired, `task_dispositions` audit trail added. Dashboard live on the local VM from git checkout; task detail page; Wren workspace. Local-first compute: pg_cron + launchd replace LLM for deterministic work (unemployment reminder, commit reminder, inbox scanning). Paprika MCP: Shiloh has Garry's 139-recipe library. Telegram bot enhanced with dashboard API tools + Paprika search. PostgreSQL is single source of truth for todos. Archive structure relocated to project root. LLM-no-value corollary added to Principle #4. |
 | v6 | April 18, 2026 | Phase 3 dashboard reskin shipped with 5 follow-up UI fixes (agent chrome, chat overflow, logo dark-mode, mobile wordmark, search snippets). Standing design/operations rules codified: icon button diagnostic convention, Margot-owns-archiving discipline, continuous definition upkeep, design briefs mirrored to Knowledge_Base. Mobile viewport floor set to iPhone 14 Pro to match the household phone fleet. Primary host's wired network upgraded to a 2.5G USB-C ethernet adapter (replacing the 1G adapter that caused recurring file-sharing drops). |
+| v7 | April 21, 2026 | Elspeth (Personal Learning & Development Coordinator, Edinburgh, F, 44) caught up from her April 14 onboarding -- added as Most Recent Hire; Dalia moved into the Specialist Agents list. Agent count 15 -> 16; gender balance 8M / 8F. Voice infrastructure Phase 1 shipped (batch transcription script + faster-whisper `small.en`); Phase 2 brief (whisper-service FastAPI, WhisperX + pyannote diarization, Hammerspoon dictation client) issued to Rune. `Knowledge_Base/Interview_Prep/` seeded (questions_log, delivery_metrics, delivery_coaching_rubric) as the foundation for a future `interview-prep` skill. Public overview auto-publish shipped: `github.com/Littleg77/bungalow_public` + a repo-local publish script + Step 5 of the `bungalow-redact` skill. Garry profile ingestion Sections 1-5 complete (~300 facts, 49 new contacts embedded). Knowledge curation v1 briefs (scoping + Rune DB + Jax UI) live in Team_Inbox awaiting specialist bandwidth. |
 
 ---
 
